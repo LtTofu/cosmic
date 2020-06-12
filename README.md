@@ -1,2 +1,2 @@
 # cosmic
-A fast, light, GUI-based ERC918 Ethereum token miner for Win64, CUDA GPUs
+Fast, lightweight GUI-based Ethereum token miner for Win64 & CUDA 
