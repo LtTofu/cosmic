@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{9EBADE9D-4A09-448D-882E-A337E7CAFB0F}</ProjectGuid>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>Cosmic</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <SpectreMitigation>Spectre</SpectreMitigation>
+    <VCToolsVersion>
+    </VCToolsVersion>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.5.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\bin\</OutDir>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5\include;$(IncludePath)</IncludePath>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <AllProjectIncludesArePublic>false</AllProjectIncludesArePublic>
+    <ManagedAssembly>true</ManagedAssembly>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Full</Optimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <SDLCheck>true</SDLCheck>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src;$(SolutionDir)\libs;$(SolutionDir)\libs\nvapi_r450;$(SolutionDir)\libs\ethereum-rlp\include;$(SolutionDir)\libs\ethereum-rlp\;$(SolutionDir)\libs\libcurl\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnablePREfast>false</EnablePREfast>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <LanguageStandard>Default</LanguageStandard>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <StringPooling>true</StringPooling>
+      <CompileAsManaged>true</CompileAsManaged>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <CallingConvention>Cdecl</CallingConvention>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <IntelJCCErratum>false</IntelJCCErratum>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cudart_static.lib;bitcoin-cryptography-library.lib;bcrypt.lib;libsodium.lib;nvml.lib;nvapi64.lib;ethereum-rlp.lib;libcurl.lib</AdditionalDependencies>
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+      <LinkStatus>false</LinkStatus>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ProfileGuidedDatabase />
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\libcurl\build\Win64\VC15\DLL Release - DLL Windows SSPI - DLL WinIDN;$(SolutionDir)\libs\bitcoin-cryptography-library\lib;$(SolutionDir)\libs\nvapi_r450\amd64;$(SolutionDir)\libs\libsodium;$(SolutionDir)\libs\ethereum-rlp\lib;$(SolutionDir)\libs;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SetChecksum>true</SetChecksum>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <Version>
+      </Version>
+      <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
+      <AssemblyDebug>false</AssemblyDebug>
+      <ShowProgress>LinkVerbose</ShowProgress>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy app.config "$(TargetPath).config"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <FastMath>true</FastMath>
+      <GenerateLineInfo>false</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+      <Optimization>O2</Optimization>
+      <Keep>true</Keep>
+      <Emulation>false</Emulation>
+      <InterleaveSourceInPTX>false</InterleaveSourceInPTX>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <MaxRegCount>
+      </MaxRegCount>
+      <AdditionalOptions>-gencode=arch=compute_61,code=sm_61 %(AdditionalOptions)</AdditionalOptions>
+      <CudaRuntime>Static</CudaRuntime>
+      <CodeGeneration />
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+    </CudaCompile>
+    <CudaLink>
+      <Optimization>O2</Optimization>
+      <PerformDeviceLink>false</PerformDeviceLink>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <UseHostLibraryDependencies>false</UseHostLibraryDependencies>
+    </CudaLink>
+    <ProjectReference />
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName)222.bsc</OutputFile>
+    </Bscmake>
+    <ResourceCompile>
+      <ShowProgress>true</ShowProgress>
+    </ResourceCompile>
+    <ResourceCompile>
+      <ResourceOutputFileName>$(IntDir)%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XamlBuildTask" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\libs\ethereum-rlp\src\RLP.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">EnableAllWarnings</WarningLevel>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Custom</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Speed</FavorSizeOrSpeed>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExceptionHandling>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ShowIncludes>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Release|x64'">OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntrinsicFunctions>
+    </ClCompile>
+    <ClCompile Include="..\libs\ethereum-rlp\src\RLP_utilsC.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Custom</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Speed</FavorSizeOrSpeed>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|x64'">EnableFastChecks</BasicRuntimeChecks>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Release|x64'">OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntrinsicFunctions>
+    </ClCompile>
+    <ClCompile Include="..\libs\json11\json11.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Size</FavorSizeOrSpeed>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+    </ClCompile>
+    <ClCompile Include="..\libs\loguru\loguru.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Size</FavorSizeOrSpeed>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+    </ClCompile>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="coredefs.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Neither</FavorSizeOrSpeed>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Default</BasicRuntimeChecks>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+    </ClCompile>
+    <ClCompile Include="CosmicWind.cpp" />
+    <ClCompile Include="cpu_solver.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</CompileAsManaged>
+      <!-- todo -->
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntelJCCErratum>
+    </ClCompile>
+    <ClCompile Include="cpu_native.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</MultiProcessorCompilation>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Default</InlineFunctionExpansion>
+      <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Fast</FloatingPointModel>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+    </ClCompile>
+    <ClCompile Include="cuda_device.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp14</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="generic_solver.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeaderFile>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Default</LanguageStandard>
+    </ClCompile>
+    <ClCompile Include="GpuSummary.cpp">
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntelJCCErratum>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="hwmon.cpp">
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntelJCCErratum>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</CompileAsManaged>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Size</FavorSizeOrSpeed>
+    </ClCompile>
+    <ClCompile Include="Keystore.cpp" />
+    <ClCompile Include="util.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+    </ClCompile>
+    <ClCompile Include="net_rlp.cpp">
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntrinsicFunctions>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Size</FavorSizeOrSpeed>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+    </ClCompile>
+    <None Include="..\solomint.sol" />
+    <ClCompile Include="net_solo.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</CompileAsManaged>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntelJCCErratum>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Size</FavorSizeOrSpeed>
+    </ClCompile>
+    <ClCompile Include="Cosmic.cpp">
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</IntelJCCErratum>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="network.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp14</LanguageStandard>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\libs\json11\json11.hpp" />
+    <ClInclude Include="..\libs\ethereum-rlp\include\RLP.h" />
+    <ClInclude Include="..\libs\ethereum-rlp\include\RLP_utilsC.h" />
+    <ClInclude Include="..\libs\loguru\loguru.hpp" />
+    <ClInclude Include="cuda_device.hpp" />
+    <ClInclude Include="Forms/AboutForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="generic_solver.hpp" />
+    <!-- <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged> -->
+    <!-- new, chasing mutex header inclusion bug using MSVC -->
+    <!-- </ClInclude> -->
+    <ClInclude Include="coredefs.hpp" />
+    <ClInclude Include="cpusolver.h" />
+    <ClInclude Include="defs.hpp" />
+    <ClInclude Include="CosmicWind.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="hashburner.cuh" />
+    <ClCompile Include="net_pool.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
+      <IntelJCCErratum Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IntelJCCErratum>
+    </ClCompile>
+    <ClInclude Include="Forms/ConfigHwMon.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Forms/ConfigIntensityForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="hwmon.h" />
+    <ClInclude Include="Keystore.h" />
+    <ClInclude Include="net_rlp.hpp" />
+    <ClInclude Include="types.hpp" />
+    <!-- <ClInclude Include="net_rlp_utils.hpp" /> -->
+    <ClInclude Include="util.hpp" />
+    <ClInclude Include="net_pool.h" />
+    <ClInclude Include="net_solo.h" />
+    <ClInclude Include="Forms/ConfigSoloMining.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Forms/GpuSummary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Forms/EnterPassword.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Forms/MakeKeystore.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Forms/OptionsForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="network.hpp" />
+    <ClInclude Include="Forms/TxReceiptForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- ... for the *.resx files in alternate location /resources/ (tidier).  thx: Simon Mourier, RandomEngy -->
+    <EmbeddedResource Include="CosmicWind.resx">
+      <DependentUpon>CosmicWind.h</DependentUpon>
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <LogicalName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </LogicalName>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/AboutForm.resx">
+      <!-- keep same file naming convention, even with *.resx files -->
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/AboutForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/OptionsForm.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/OptionsForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/ConfigHwMon.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/ConfigHwMon.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/ConfigIntensityForm.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/ConfigIntensityForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/ConfigSoloMining.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/ConfigSoloMining.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/GpuSummary.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/GpuSummary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/EnterPassword.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/EnterPassword.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/MakeKeystore.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/MakeKeystore.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms/TxReceiptForm.resx">
+      <ManifestResourceName>$(TargetName).%(Filename)</ManifestResourceName>
+      <DependentUpon>Forms/TxReceiptForm.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="hashburner.cu">
+      <TargetMachinePlatform Condition="'$(Configuration)|$(Platform)'=='Release|x64'">64</TargetMachinePlatform>
+      <CodeGeneration Condition="'$(Configuration)|$(Platform)'=='Release|x64'">compute_75,sm_75;compute_61,sm_61;compute_52,sm_52;compute_70,sm_70</CodeGeneration>
+      <FastMath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</FastMath>
+      <PtxAsOptionV Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PtxAsOptionV>
+      <FileType>Document</FileType>
+      <GenerateRelocatableDeviceCode Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</GenerateRelocatableDeviceCode>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Cosmic.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.5.targets" />
+  </ImportGroup>
+</Project>

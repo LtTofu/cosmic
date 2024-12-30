@@ -1,0 +1,21 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+
+//#define V_DEBUG 3
+//#define DEFAULT_DIFFUPDATE_FREQUENCY
+#define PB_BYTES_ARRAY_T(n) struct { pb_size_t size; pb_byte_t bytes[n]; }
+#define PB_BYTES_ARRAY_T(n) struct { pb_size_t size; pb_byte_t bytes[n]; }
+#define PB_BYTES_ARRAY_T(n) struct { pb_size_t size; pb_byte_t bytes[n]; }
+#define PB_BYTES_ARRAY_T(n) struct { pb_size_t size; pb_byte_t bytes[n]; }
+#define __global__ __location__(global)
+#define __device__ __location__(device)
+#define __forceinline__ __inline__ __attribute__((always_inline))
+#define LOG_F(verbosity_name, __VA_ARGS__) VLOG_F(loguru::Verbosity_##verbosity_name, __VA_ARGS__)
+#define LOG_IF_F(verbosity_name, cond, __VA_ARGS__) VLOG_IF_F(loguru::Verbosity_##verbosity_name, cond, __VA_ARGS__)
+#define ERROR
+#define WM_PASTE
+
+#define THREAD_NO (blockDim.x * blockIdx.x + threadIdx.x)
+
+//#define UINT8_MAX

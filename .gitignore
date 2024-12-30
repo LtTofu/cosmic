@@ -348,3 +348,57 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/libs/libcurl/docs
+/libs/nvapi_r450
+/libs/libcurl/include
+/libs/libcurl/lib
+/libs/libcurl/m4
+/libs/libcurl/open-ssl-stuff/include
+/libs/libcurl/open-ssl-stuff
+/libs/libcurl/out
+/libs/libcurl/plan9
+/libs/libcurl/scripts
+/libs/libcurl/src
+/libs/libcurl/winbuild
+/libs/libsodium/sodium
+libs/libcurl/projects/wolfssl_options.h
+libs/libcurl/projects/wolfssl_override.props
+/libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/lib/libcurl.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/CL.command.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/CL.read.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/CL.write.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/curl.lastbuildstate
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/link.command.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/link.read.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/link.write.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/rc.command.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/rc.read.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/rc.write.1.tlog
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.vcxproj.FileListAbsolute.txt
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/src/curl.tlog/unsuccessfulbuild
+libs/libcurl/build/Win64/VC15/LIB Release - DLL Windows SSPI - DLL WinIDN/lib/libcurl.vcxproj.FileListAbsolute.txt
+libs/json11/json11.cpp
+libs/json11/json11.hpp
+libs/json11/test.cpp
+*.yml
+libs/libcurl/.dir-locals.el
+libs/libcurl/.mailmap
+libs/libcurl/acinclude.m4
+*.bat
+libs/libcurl/maketgz
+*.in
+*.ac
+*.tmpl
+*.dist
+*.am
+libs/libcurl/Makefile
+/libs/ethereum-rlp/src
+/libs/ethereum-rlp/include
+/libs/bitcoin-cryptography-library/cpp
+*.filters
+libs/libcurl/projects/Windows/.gitattributes
+*.bsc
+*.lastcodeanalysissucceeded
+about_this_repo.txt
+libs/ethereum-rlp/README.txt
+libs/libcurl/buildconf

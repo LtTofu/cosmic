@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>
+COSMiC is a CUDA miner for 0xBitcoin and other ERC-918 tokens, with a focus on speed, stability and ease-of-use.
+It started out as a fork to 0xBitcoin-Miner. Version 4.x is a complete rewrite in C++, also powered by .NET framework.
+The mining/network capabilities and GUI are fully integrated as a single, modern(-ish) application.
+
+COSMiC is primarily tested for mining tokens on Maxwell generation 2 and Pascal devices (GTX 9xx and 10x0-series) but may work on
+GPUs as old as Kepler (6xx-series) with the "Compatibility" CUDA engine selected.
+
+Supports most ERC-918 tokens, including KIWItoken, CatEther, CryptoPepes, S.E.D.O.
+Additional tokens (such as 0xLTC, S.E.D.O. and 0xGOLD) can be merge-mined on supporting 0xBitcoin pools,
+such as Mike.rs, with no reduction in hashrate.
+
+SUGGESTED POOLS:
+tokenminingpool.com:8080 - Infernal Toast's Token Mining Pool (the original!) - pays out every block, 50000 min share diff
+mike.rs:8080 - Mikers' 0xBitcoin tokenpool w/ Merged Mining (USA) - 65536 min share difficulty
+0xbtc.tosti.ro:8080 - Tosti's 0xBTC tokenpool (EU) - 16384 min share difficulty
+
+HOTKEYS:
+If the Options -&gt; Keyboard Shortcuts option is enabled, you can adjust device Intensity
+using the keyboard keys - / + (regular or numpad). Select multiple devices at once to quickly
+adjust their Intensities. It is not necessary to stop mining to do this. (Consider turning the option off when you're done if you have a cat)
+
+ON DISPLAY ADAPTERS/WINDOWS RESPONSIVENESS:
+If Windows seems laggy while you are mining, it's probably because one of your GPUs is a Display Adapter (connected to
+a monitor and being used for Windows' display.) Consider turning down your Display Adapter's Mining Intensity (this is
+often, but not always, GPU#0) or using a dedicated graphics card/Integrated Graphics (IGP) and mining on the other devices.
+
+CHANGES THIS VERSION:
+- Integrated Hardware Monitoring ("Watchqat") with safety features
+- Under-the-hood improvements, tweaks and optimizations (specifically for Pascal and newer)
+- Increased hashrate observed on Maxwell Gen2 (GTX 9xx) and Pascal (GTX 10x0) architectures
+- Built against CUDA 10.1 + Update 1 (please make sure your drivers are recent!)
+- Keyboard hotkeys (read on) for quick Intensity adjustment (more will be added)
+- Ability to copy Events out of Event Viewer (select Events, right-click and choose Copy Events).
+- Network code improvements and bug-fixes
+- Optimizations to further reduce CPU usage
+- UI Reworking/Improvements
+
+
+FEATURES:
+- Mining on multiple CUDA devices in one instance, auto-detected
+- Mines on CUDA Devices and sending results to Pools (TokenPool etc.)
+- Full Graphical User Interface for Windows 64-bit (Intended to make Token Mining as easy as possible for newcomers)
+- Now faster, more efficient and lower CPU/RAM use than COSMiC V3.4
+- All options can be configured in the GUI (no manual config editing required!)
+- More elegant handling of CloudFlare error pages and adjustable Network Access interval
+- Aims for very few stale Shares at the Pool level and verifies GPU-found solutions on the CPU
+- Multi-Threaded for enhanced performance on CPUs with &gt;2 threads
+
+WHAT'S PLANNED:
+- Solo Mining support (almost ready)
+- CPU Mining
+- Backup pool selection
+- Further Performance Improvements
+
+GETTING STARTED: 
+- Set up an Ethereum address using a site like MyEtherWallet or a wallet such as Trust (iOS/Android) or Metamask (Browser Extension.)
+BACK UP YOUR PRIVATE KEY and Public Ethereum Address.
+
+- Select the Options -&gt; General Setup... menu item.
+- Enter your Ethereum Public Address, Pool Address (and Port).
+- Increase the Auto-Donation % to help support further development :)
+- Click 'Save Setings'.
+- Right-click devices and choose 'Configure GPU...' to configure your Intensity
+and desired max GPU temp/minimum fan/pump speed (if desired).
+- Click 'Start Mining!'
+
+- To stop mining, click the button again or select menu item File -&gt; Quit.
+
+- Check your pool's website to view your mining stats. When the pool hits a full solution (a.k.a. "block"), mined by either you
+or someone else on the pool, your Shares % should convert to a Balance in tokens. When you've reached your pool's minimum,
+it will send the tokens to your specified Ethereum address. Note that pools pay out during different times of the day- check with
+your pool's website, Discord or operator for more info.
+
+
+HOW AUTO-DONATION WORKS:
+Unlike a traditional "devfee", COSMiC does not switch to another pool to donate the selected % of shares. Instead,
+the shares are submitted to your selected pool. The GPU continues working at all times with no interruption. The speed
+speed gains you'll likely enjoy with COSMiC and its many optimizations (more added all the time) should more than make
+up for the low % of donated shares. This feature helps to support continued development of this application. :)
+
+NETWORK ACCESS INTERVAL:
+This will be more configurable in future releases. The slider determines how often the miner will access the pool. Turn this
+setting "down" will get new challenges faster and submit shares more quickly- consider setting it to a smaller time interval,
+in milliseconds, if you get a lot of invalid shares at the Pool level. If not, turn it "up" (longer interval in ms) to reduce network
+traffic to the Pool.
+
+OTHER:
+Keccak CPU Verification powered by SPH_Keccak by Thomas Pornin (thomas.pornin@cryptolog.com)
+Pool communication powered by Libcurl (https://curl.haxx.se/libcurl)
+Monochrome menu icons by Iconic Open
+</value>
+  </data>
+</root>
